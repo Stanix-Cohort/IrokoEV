@@ -28,6 +28,9 @@ jobs:
   Vercel-Preview:
     needs: Quality-Check 
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4

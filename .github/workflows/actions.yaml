@@ -40,3 +40,4 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PRJ_ID }}
           github-token: ${{ secrets.GITHUB_TOKEN }} 
           vercel-args: '--preview'
+          scope: ${{ secrets.VERCEL_TEAM_ID }}

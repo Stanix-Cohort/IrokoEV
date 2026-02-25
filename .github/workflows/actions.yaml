@@ -1,0 +1,42 @@
+name: Github actions
+on:
+  pull_request:
+    branches: [ staging ] 
+
+jobs:
+  Quality-Check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Linter
+        run: npm run lint 
+
+      - name: Test Build
+        run: npm run build 
+
+  Vercel-Preview:
+    needs: Quality-Check 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy Preview to Vercel
+        uses: amondnet/vercel-action@v25 
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_TEAM_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PRJ_ID }}
+          github-token: ${{ secrets.GITHUB_TOKEN }} 
+          vercel-args: '--preview'

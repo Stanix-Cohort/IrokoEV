@@ -15,6 +15,8 @@ This document outlines the DevOps infrastructure and CI/CD pipeline established 
 
 [Environment endpoints](#environment-endpoints)
 
+[Deployment Flow](#deployment-flow)
+
 [Branch management and protection rules](#branch-management-and-protection-rules)
 * [Branch roles and permissions](#branch-roles-and-permissions)
 * [Automated branch lifecycle](#automated-branch-lifecycle)
@@ -26,6 +28,8 @@ This document outlines the DevOps infrastructure and CI/CD pipeline established 
 * [Vercel-Preview (Deployment)](#vercel-preview-deployment)
 
 [Accessing deployment previews](#accessing-deployment-previews)
+
+[Security & Secrets Management](#security--secrets-management)
 
 [Monitoring & Operational Responsibility](#monitoring--operational-responsibility)
 
@@ -67,7 +71,7 @@ To interact with or modify this pipeline, the following are required:
 
 The IrokoEV website is hosted on Vercel and integrated with GitHub to provide a seamless "push-to-deploy" experience.
 
-### initialize the project
+### Initialize the project
 
 1.  **Preset:** The project uses the `Vite` framework preset, which automates the build command `(npm run build)` and output directory `(dist)` automatically.
 
@@ -96,6 +100,26 @@ Environment variables are managed within the Vercel Dashboard under **Project Se
 |Staging|  `staging` |  https://iroko-ev-project-git-staging-stanix-projects.vercel.app/  | Pre-release testing and QA. |
 |Preview| `feat/*`|  _Generated per PR_ |Temporary builds for code review. |
 
+## Deployment Flow
+
+The IrokoEV project follows a structured branch-to-environment deployment strategy:
+
+Feature Branch  
+↓  
+Pull Request → staging  
+↓  
+GitHub Actions (Quality-Check)  
+↓  
+Vercel Preview Deployment  
+↓  
+Approval  
+↓  
+Merge to main  
+↓  
+Production Deployment (Vercel)
+
+This flow ensures that all code changes are validated, tested, and reviewed before reaching production. This separation of concerns reduces deployment risk and improves release confidence.
+
 ## Branch management and protection rules
 To maintain a stable codebase, the repository follows a strict branching strategy centered around a staging branch.
 
@@ -121,7 +145,7 @@ The following rules are enforced on the staging and main branches to act as a Fi
 
 1.  **Require pull request:** Direct pushes to protected branches are disabled.
 
-2. **Mandatory status checks:** The GitHub Actions (Quality-Check and Vercel-Preview) must return a Green  status before the "Merge" button becomes active.
+2. **Mandatory status checks:** The GitHub Actions (Quality-Check and Vercel-Preview) must return a Green status before the "Merge" button becomes active.
 
 
 ## CI/CD pipeline with GitHub Actions
@@ -166,6 +190,19 @@ Once the GitHub Action completes:
 * Click the `Preview URL` to view the live, temporary version of the website.
 
 
+## Security & Secrets Management
+
+All deployment credentials and authentication tokens are stored securely using GitHub Secrets and are never hardcoded in the repository.
+
+The following secrets are configured:
+
+- `VERCEL_TOKEN`
+- `VERCEL_PRJ_ID`
+- `VERCEL_TEAM_ID`
+
+These secrets are restricted to repository administrators and should be rotated periodically as part of security best practices.
+
+
 ## Monitoring & Operational Responsibility
 
 The DevOps team is responsible for monitoring:
@@ -189,7 +226,7 @@ Interpret Action Errors if a PR check fails (indicated by a *Red X*), use the fo
 |`command "build" exited with 1`| Compiler error (e.g., missing imports) | Ensure `npm run build` passes locally.|
 |`Resource not accessible`|Missing `write` permissions in YAML.|Verify `permissions: pull-requests: write` in the workflow file. | 
 | `Project not found`  | incorrect `VERCEL_PROJECT_ID` | Validate GitHub Action Secrets. |
-|`403 Forbidden`| Expired Vercel Token.| Regenerate the Vercel Personal Access Token|
+|`403 Forbidden`| Expired Vercel Token.| Regenerate the Vercel Personal Access Token. |
 
 ### Resolve Failures
 

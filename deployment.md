@@ -27,6 +27,8 @@ This document outlines the DevOps infrastructure and CI/CD pipeline established 
 
 [Accessing deployment previews](#accessing-deployment-previews)
 
+[Monitoring & Operational Responsibility](#monitoring--operational-responsibility)
+
 [Troubleshooting](#troubleshooting)
 * [Resolve Failures](#resolve-failures)
 
@@ -83,6 +85,8 @@ Environment variables are managed within the Vercel Dashboard under **Project Se
 
 * **Vercel speed insights:** Enabled to monitor **Real User Monitoring** (RUM) scores, which track how fast the site feels to actual users.
 
+⚠ **Note:** Speed Insights collects performance data only from Production deployments. Preview (staging) environments do not generate performance metrics.
+
 * **Vercel analytics:** Enabled to track visitor traffic and performance metrics directly from the Vercel dashboard.
 
 ## Environment Endpoints
@@ -121,7 +125,7 @@ The following rules are enforced on the staging and main branches to act as a Fi
 
 
 ## CI/CD pipeline with GitHub Actions
-The automated workflow is defined in `.github/workflows/actions.yaml`. This pipeline ensures that no broken code is ever merged into the project.
+The automated workflow is defined in `.github/workflows/actions.yaml`. This pipeline ensures that no unverified or failing code is merged into protected branches.
 
 ### Workflow triggers
 The workflow triggers automatically on:
@@ -150,8 +154,7 @@ This provides a live **Preview Link** for reviewers:
 
 * **Authentication:** Uses `VERCEL_TOKEN`, `VERCEL_PRJ-ID` and `VERCEL_TEAM_ID` stored in GitHub Secrets for secure access.
 
-* **Write permissions:** The job is explicitly granted write permissions for pull-requests and contents. This allows the automation to bypass organizational locks and post comments directly on the PR.
-
+* **Write permissions:** The job is explicitly granted write permissions for pull-requests and contents. This allows the automation to post deployment comments on the Pull Request and update PR status checks.
 ## Accessing deployment previews
 
 Once the GitHub Action completes:
@@ -163,6 +166,19 @@ Once the GitHub Action completes:
 * Click the `Preview URL` to view the live, temporary version of the website.
 
 
+## Monitoring & Operational Responsibility
+
+The DevOps team is responsible for monitoring:
+
+- GitHub Actions pipeline failures
+- Preview deployment health
+- Production deployment status
+- Vercel Analytics dashboard
+- Vercel Speed Insights dashboard
+
+Any failed status check must be investigated before approving or merging a Pull Request.
+
+
 ## Troubleshooting
 
 Interpret Action Errors if a PR check fails (indicated by a *Red X*), use the following table to diagnose the issue:
@@ -170,10 +186,10 @@ Interpret Action Errors if a PR check fails (indicated by a *Red X*), use the fo
 |Error Message| Root Cause| Resolution|
 |---|---|---|
 | `eslint: command not found`| Syntax or style violations detected.| Run `npm run lint` locally and fix errors. |
-|`command "build" exited with 1`|	Compiler error (e.g., missing imports)|.	Ensure `npm run build` passes locally.|
+|`command "build" exited with 1`| Compiler error (e.g., missing imports) | Ensure `npm run build` passes locally.|
 |`Resource not accessible`|Missing `write` permissions in YAML.|Verify `permissions: pull-requests: write` in the workflow file. | 
-| `Project not found`  | incorrect `VERCEL_PROJECT_ID`. | Validate GitHub Action Secrets. |
-|`403 Forbidden`| Expired Vercel Token.| Regenerate the Vercel Personal Access Token.|
+| `Project not found`  | incorrect `VERCEL_PROJECT_ID` | Validate GitHub Action Secrets. |
+|`403 Forbidden`| Expired Vercel Token.| Regenerate the Vercel Personal Access Token|
 
 ### Resolve Failures
 

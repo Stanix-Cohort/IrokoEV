@@ -13,6 +13,8 @@ This document outlines the DevOps infrastructure and CI/CD pipeline established 
 * [Environment variables](#environment-variables)
 * [Observability tools](#observability-tools)
 
+[Environment endpoints](#environment-endpoints)
+
 [Branch management and protection rules](#branch-management-and-protection-rules)
 * [Branch roles and permissions](#branch-roles-and-permissions)
 * [Automated branch lifecycle](#automated-branch-lifecycle)
@@ -82,6 +84,13 @@ Environment variables are managed within the Vercel Dashboard under **Project Se
 * **Vercel speed insights:** Enabled to monitor **Real User Monitoring** (RUM) scores, which track how fast the site feels to actual users.
 
 * **Vercel analytics:** Enabled to track visitor traffic and performance metrics directly from the Vercel dashboard.
+
+## Environment Endpoints
+|Environment|	Branch|	Deployment URL	|Purpose|
+| --- |---|---|---|
+|Production| `main`|  https://irokoev.vercel.app/  | Live site for end-users. |
+|Staging|  `staging` |  https://iroko-ev-project-git-staging-stanix-projects.vercel.app/  | Pre-release testing and QA. |
+|Preview| `feat/*`|  _Generated per PR_ |Temporary builds for code review. |
 
 ## Branch management and protection rules
 To maintain a stable codebase, the repository follows a strict branching strategy centered around a staging branch.

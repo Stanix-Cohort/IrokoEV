@@ -11,7 +11,7 @@ export default function Navbar() {
       <div className="max-w-[1440px] mx-auto h-full flex items-center justify-between px-6">
 
         <div className="font-bold text-xl">
-          <img src={Logo} alt="Logo" className="w-14 h-14 md:w-22 md:h-22"/>
+          <img src={Logo} alt="Logo" className="w-16 h-16 md:w-22 md:h-22"/>
         </div>
 
         {/* Desktop */}

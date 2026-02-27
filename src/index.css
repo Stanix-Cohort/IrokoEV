@@ -6,3 +6,7 @@
   --color-iroko-hover: #0BAF65;
   --color-iroko-pressed: #043E23;
 }
+
+html {
+  scroll-behavior: smooth;
+}

@@ -25,7 +25,7 @@ const Button = ({
     primary: "bg-iroko text-white hover:bg-iroko-hover active:bg-iroko-pressed shadow-md hover:shadow-lg",
 
     // Yellow Background Button 
-    latest: "bg-[#CFCA11] text-black hover:bg-[#CFCA11] hover:opacity-90 active:opacity-100 shadow-md hover:shadow-lg",
+    latest: "bg-[#CFCA11] text-black hover:bg-[#CFCA11] hover:bg-white active:opacity-100 shadow-md hover:shadow-lg",
     
     // Bordered Green (Good for 'Learn More' or secondary actions)
     outlineGreen: "border-1 border-iroko text-iroko bg-transparent hover:bg-transparent hover:border-iroko-hover active:border-iroko-pressed active:text-iroko-pressed hover:text-iroko-hover shadow-sm",

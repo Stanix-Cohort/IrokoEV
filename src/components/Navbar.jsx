@@ -17,6 +17,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop */}
+              
       <ul
               className={`
                 absolute top-[72px] left-0 w-full shadow-md md:text-gray-400 
@@ -30,11 +31,9 @@ export default function Navbar() {
               <Link to="/about"><li className="hover:text-white" onClick={() => setOpen(false)}>About</li></Link>
               <Link to="/fleet"><li className="hover:text-white" onClick={() => setOpen(false)}>Fleet</li></Link>
               <Link to="/contact"><li className="hover:text-white" onClick={() => setOpen(false)}>Contact</li></Link>
-              
+               
             </ul>
-
-         <Link to="/contact" className="hidden md:block"><Button shape="pill" variant="latest">Reserve</Button></Link>
-
+             
         
         {/* Mobile Button */}
             <button
@@ -46,6 +45,7 @@ export default function Navbar() {
             >
               {open ? <X size={28} /> : <Menu size={28} />}
             </button>
+            <Link to="/contact"><Button shape="pill" variant="latest">Reserve</Button></Link>
       </div>
 
       {/* Mobile Menu */}
@@ -55,7 +55,7 @@ export default function Navbar() {
               <Link to="/about" onClick={() => setOpen(false)}>About</Link>
               <Link to="/fleet" onClick={() => setOpen(false)}>Fleet</Link>
               <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
-            </div>
+            </div>      
       )}
     </nav>
   )

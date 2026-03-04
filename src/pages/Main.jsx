@@ -36,7 +36,7 @@ const Main = () => {
       <div className="relative z-10 flex flex-col items-center gap-3 max-w-md">
 
         {/* TOP TEXT */}
-        <p className="text-3xl font-bold text-white inline-block">
+        <p className="text-3xl md:text-4xl font-bold text-white inline-block">
           The Future Moves in Silence.
         </p>
 

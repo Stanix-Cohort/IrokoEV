@@ -20,75 +20,70 @@ const Main = () => {
                       {/* Hero Section */}
 <div className="relative z-10 flex flex-col w-full">
 
-  {/* Grid with overlay */}
-  <div className="grid grid-cols-1">
+               {/* Grid with overlay */}
+               <div className="grid grid-cols-1">
 
-    {/* HERO CONTAINER */}
-    <div className="
-      relative w-full bg-black rounded-bl-2xl rounded-br-2xl overflow-hidden 
-      flex flex-col items-center justify-start
-      text-center
-      pt-10 pb-8 px-6 sm:px-8
-      min-h-[360px] md:min-h-[600px]
-    ">
+               {/* HERO CONTAINER */}
+               <div className="
+                    relative w-full bg-black rounded-bl-2xl rounded-br-2xl overflow-hidden 
+                    flex flex-col items-center justify-start
+                    text-center
+                    pt-10 pb-8 px-6 sm:px-8
+                    min-h-[360px] md:min-h-[600px]
+               ">
 
-      {/* CONTENT */}
-      <div className="relative z-10 flex flex-col items-center gap-3 max-w-md">
+                    {/* CONTENT */}
+                    <div className="relative z-10 flex flex-col items-center gap-3 max-w-md">
 
-        {/* TOP TEXT */}
-        <p className="text-3xl md:text-4xl font-bold text-white inline-block">
-          The Future Moves in Silence.
-        </p>
+                    {/* TOP TEXT */}
+                    <p className="text-3xl md:text-4xl font-bold text-white inline-block">
+                         The Future Moves in Silence.
+                    </p>
 
-        {/* BOTTOM TEXT */}
-        <p className="text-gray-200 text-xs leading-relaxed drop-shadow-md">
-          IrokoEV builds vehicles that move with purpose and grace. Each model carries the weight of precision
-           engineering and the lightness of innovation.
-          
-        </p>
+                    {/* BOTTOM TEXT */}
+                    <p className="text-gray-200 text-xs leading-relaxed drop-shadow-md">
+                         IrokoEV builds vehicles that move with purpose and grace. Each model carries the weight of precision
+                         engineering and the lightness of innovation.
+                         
+                    </p>
 
-        {/* BUTTON */}
-        <Link to="/contact" className="hidden md:block">
-          <Button shape="pill" variant="latest">
-            Explore The Fleet
-          </Button>
-        </Link>
-          <Link to="/contact" className="block md:hidden">
-          <Button shape="pill" variant="latest">
-            Explore The Fleet
-          </Button>
-        </Link>
-      </div>
+                    {/* BUTTON */}
+                    <Link to="/fleet" className="hidden md:block">
+                         <Button shape="pill" variant="latest">
+                         Explore The Fleet
+                         </Button>
+                    </Link>
+                         <Link to="/contact" className="block md:hidden">
+                         <Button shape="pill" variant="latest">
+                         Explore The Fleet
+                         </Button>
+                    </Link>
+                    </div>
 
-      {/* IMAGE DESKTOP*/}
-      <img
-        src={heroImage}
-        alt="perform"
-        className="hidden md:block
-          absolute inset-0
-          w-full h-full
-          object-cover
-          object-[center_10%]
-          scale-[0.80]
-          md:scale-[0.80]  md:object-[center_-85%] 
-        "
-      />
-      {/* IMAGE MOBILE*/}
-       <img
-        src={heroImage}
-        alt="perform"
-        className="block md:hidden
-          absolute inset-0
-          w-full h-full
-          object-contain
-          object-[center_200%]
-          scale-[0.90]
-           
-        "
-      />
-
-    </div>
-
+                    {/* IMAGE DESKTOP*/}
+                    <img
+                    src={heroImage}
+                    alt="perform"
+                    className="hidden md:block
+                         absolute inset-0
+                         w-full h-full
+                         object-cover
+                         object-[center_10%]
+                         scale-[0.80]
+                         md:scale-[0.80]  md:object-[center_-85%]  " />
+                   
+                   
+                    {/* IMAGE MOBILE*/}
+                    <img
+                    src={heroImage}
+                    alt="perform"
+                    className="block md:hidden
+                         absolute inset-0
+                         w-full h-full
+                         object-contain
+                         object-[center_200%]
+                         scale-[0.90] "  />                                    
+               </div>
   </div>
 </div>
                                  

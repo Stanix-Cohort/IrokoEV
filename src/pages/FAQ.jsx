@@ -4,6 +4,7 @@ import Button from '../components/Button'
 import faqImage from "../assets/FaqImage.png"
 import { Link } from "react-router-dom";
 
+
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0); // first item open by default
 

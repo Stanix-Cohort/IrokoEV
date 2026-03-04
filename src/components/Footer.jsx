@@ -1,4 +1,10 @@
 import Logo from '../assets/IrokoLG.png'
+import facebook from '../assets/Facebook.png'
+import twitter from '../assets/Twitter.png'
+import instagram from '../assets/Instagram.png'
+import linkedin from '../assets/Linkedin.png'
+import { Link } from "react-router-dom";
+import Button from './Button'
 
 const Home = () => {
   return (
@@ -18,11 +24,11 @@ const Home = () => {
             </div>
             <div className="flex flex-col gap-2">
                  <span>Categories</span>
-                 <span>Home</span>
-                 <span>About</span>
-                 <span>Fleet</span>
-                 <span>Contact</span>
-                 <span>Indoor</span>
+             <Link to="/"><span>Home</span></Link>
+                <Link to="/about"><span>About</span></Link>
+                 <Link to="/fleet"><span>Fleet</span></Link>
+                 <Link to="/contact"><span>Contact</span></Link>
+                 <Link to="/indoor"><span>Indoor</span></Link>
             </div>           
             <div className="flex flex-col gap-2">
                   <span>Privacy olicy</span>
@@ -33,20 +39,23 @@ const Home = () => {
           <div>
             <span>Subscribe Now</span>
             <div>
-              <input type="text" placeholder="Enter your email" />
-              <button>Submit</button>
+              <input type="text"className="bg-gray-600 px-4 py-1" placeholder="your email" />
+              <button className="bg-[#CFCA11] px-4 py-1 rounded-r-md font-bold hover:bg-white text-black transition">
+                  Submit
+                </button>
+              {/* <button>Submit</button> */}
             </div>
-            <div>
-              <span>icon fb</span>
-              <span>icon twitter</span>
-              <span>icon instagram</span>
-              <span>icon linkedin</span>             
+            <div className="flex items-center gap-4 mt-4">
+              <span><img src={facebook} alt="Facebook" className="w-6 h-6" /></span>
+              <span><img src={twitter} alt="Twitter" className="w-6 h-6" /></span>
+              <span><img src={instagram} alt="Instagram" className="w-6 h-6" /></span>
+              <span><img src={linkedin} alt="Linkedin" className="w-6 h-6" /></span>             
             </div>
           </div>
         </div>
         <div className="relative z-0 mt-[39px] hidden md:block">
              <h1 className="md:text-xl font-bold text-center">
-          ©️2026 Iroko Motors Inc. All rights reserved  
+          © 2026 Iroko Motors Inc. All rights reserved  
         </h1>
         </div>
         

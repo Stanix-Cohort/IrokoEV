@@ -276,8 +276,8 @@ const Main = () => {
                                 </p>
                         </span>
                         <span className="flex flex-row">
-                              <Button variant="outlineGreen">Configure</Button>                    
-                              <Button variant="ghost"> <span className="flex items-center gap-4 leading-none">Explore<FaGreaterThan /></span></Button>
+                         <Link to="/fleet"><Button variant="outlineGreen">Configure</Button></Link>                    
+                        <Link to="/fleet"><Button variant="ghost"> <span className="flex items-center gap-4 leading-none">Explore<FaGreaterThan /></span></Button></Link>
                         </span>
                                 
                     </div> 
@@ -308,8 +308,8 @@ const Main = () => {
                                            with a range exceeding five hundred miles.
                                          </p>
                                          <div className="flex gap-4">
-                                              <Button variant="outlineGreen">Reserve</Button>
-                                              <Button variant="ghost"><span className="flex items-center gap-4 leading-none">Explore<FaGreaterThan /></span></Button>
+                                            <Link to="/contact"> <Button variant="outlineGreen">Reserve</Button></Link>
+                                         <Link to="/fleet"><Button variant="ghost"><span className="flex items-center gap-4 leading-none">Explore<FaGreaterThan /></span></Button></Link>
                                          </div>
                                    </div>
                               </div>                              

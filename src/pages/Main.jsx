@@ -16,62 +16,94 @@ const Main = () => {
     <div>
                      {/* matches  Navbar's constraints same padding for consistency*/}
          <div className="max-w-[1440px] mx-auto px-3 h-full">
+            
+                      {/* Hero Section */}
+<div className="relative z-10 flex flex-col w-full">
+
+  {/* Grid with overlay */}
+  <div className="grid grid-cols-1">
+
+    {/* HERO CONTAINER */}
+    <div className="
+      relative w-full bg-black rounded-bl-2xl rounded-br-2xl overflow-hidden 
+      flex flex-col items-center justify-start
+      text-center
+      pt-10 pb-8 px-6 sm:px-8
+      min-h-[360px] md:min-h-[600px]
+    ">
+
+      {/* CONTENT */}
+      <div className="relative z-10 flex flex-col items-center gap-3 max-w-md">
+
+        {/* TOP TEXT */}
+        <p className="text-3xl font-bold text-white inline-block">
+          The Future Moves in Silence.
+        </p>
+
+        {/* BOTTOM TEXT */}
+        <p className="text-gray-200 text-xs leading-relaxed drop-shadow-md">
+          IrokoEV builds vehicles that move with purpose and grace. Each model carries the weight of precision
+           engineering and the lightness of innovation.
+          
+        </p>
+
+        {/* BUTTON */}
+        <Link to="/contact" className="hidden md:block">
+          <Button shape="pill" variant="latest">
+            Explore The Fleet
+          </Button>
+        </Link>
+          <Link to="/contact" className="block md:hidden">
+          <Button shape="pill" variant="latest">
+            Explore The Fleet
+          </Button>
+        </Link>
+      </div>
+
+      {/* IMAGE DESKTOP*/}
+      <img
+        src={heroImage}
+        alt="perform"
+        className="hidden md:block
+          absolute inset-0
+          w-full h-full
+          object-cover
+          object-[center_10%]
+          scale-[0.80]
+          md:scale-[0.80]  md:object-[center_-85%] 
+        "
+      />
+      {/* IMAGE MOBILE*/}
+       <img
+        src={heroImage}
+        alt="perform"
+        className="block md:hidden
+          absolute inset-0
+          w-full h-full
+          object-contain
+          object-[center_200%]
+          scale-[0.90]
+           
+        "
+      />
+
+    </div>
+
+  </div>
+</div>
+                                 
+           
+                   
         
-                                   {/*Background Image Container */}
-         <section style={{ backgroundImage: `url(${heroImage})` }}
-                  className="relative w-full min-h-[70vh] md:min-h-[calc(100vh-120px)] rounded-br-2xl rounded-bl-2xl bg-cover bg-center 
-                        flex flex-col items-center justify-center overflow-hidden" >       
-                                      
-                 <div>                                                       
-                                        {/* Hero Section text-contents*/}                                     
-                  <section className="relative z-10 flex flex-col items-center text-center px-6 gap-6 w-full">
-                       <h1 className="text-3xl md:text-5xl font-bold mx-auto text-white" >
-                                        {/* Mobile Contents  */}
-                          <span className="block md:hidden">
-                            The Future Moves<br /> 
-                            in Silence.
-                           </span>
-                                        {/* Desktop Contents  */}
-                           <span className="hidden md:block">
-                            The Future Moves in Silence.
-                           </span>
-                        </h1>
-                
-                                         {/* DESKTOP VIEW: */}
-                            <span className="hidden md:block">  
-                            <p className="text-white">
-                              IrokoEV builds vehicle that move with purpose and grace. Each model carries the weight of precision<br />
-                              engineering and the lightness of innovation.
-                            </p>
-                            </span> 
-
-                                         {/* MOBILE VIEW: */} 
-                            <span className="block md:hidden">
-                                <p className="text-white text-sm">
-                                  IrokoEV builds vehicle that move with purpose<br />
-                                   and grace. Each model carries the weight of <br />
-                                   precision engineering and the lightness of <br />
-                                    innovation.                                
-                                </p>
-                            </span>
-                          
-                            <div className="flex text-center justify-center gap-4 mb-10">
-                           <Link to="/fleet"> <Button shape="pill" variant="latest">Explore the Fleet</Button></Link>
-                                                                                                               
-                            </div>
-                   </section>
-
-                </div>
-        </section>
 
                                         {/* section about with 4 grid*/}
      <section className="mt-32">
               <div className="relative z-10 flex flex-col px-6 gap-4 w-full">
                     <div>
-                         <div className="flex flex-col items-end justify-end text-end gap-4 w-full">
+                         <div className="flex flex-col items-end justify-end text-end  w-full">
                              <p className="font-bold">Effortless performance, meticulous craftmanship,</p>
                               <p className="text-gray-400 font-bold">intuitive hidden technology, and understated prestige</p> 
-                               <p className="text-gray-600 font-bold">combine to create a quietly confident luxury driving experience.</p>
+                               <p className="text-gray-600 font-bold">combine to create a quietly confident luxury driving experience.</p><br />
                              
                                 <Link to="/fleet"><Button shape="pill" variant="outlineGreen">Explore Fleet</Button></Link>
                          </div>
@@ -82,14 +114,14 @@ const Main = () => {
                                             {/* Grid Item Performance  */}
                           <div className="relative w-full rounded-3xl overflow-hidden flex flex-col justify-between p-6 sm:p-8 min-h-[300px] lg:min-h-[350px]">                                  
                                    
-                                             {/* 1. IMAGE ABSOLUTE: acts as a background that fills the parent */}
+                                             {/* IMAGE ABSOLUTE: acts as a background that fills the parent */}
                                              <img 
                                              src={performanceImage} 
                                              alt="perform" 
                                              className="absolute inset-0 w-full h-full object-cover" 
                                              /> 
                                    
-                                   {/* 2. TOP CONTENT: Added 'relative z-10' so it sits above the image */}
+                                   {/* TOP CONTENT: Added 'relative z-10' so it sits above the image */}
                                    <div className="relative z-10 text-start" >
                                              <p className="inline-block text-xs text-white bg-transparent outline outline-2 outline-white rounded-full px-6 py-2">
                                                   Performance
@@ -114,7 +146,7 @@ const Main = () => {
                                    {/* 2. Grid Item Craftmanship */}
                           <div className="relative w-full rounded-3xl overflow-hidden flex flex-col justify-between p-6 sm:p-8 min-h-[300px] lg:min-h-[350px]">                                  
                                    
-                                   {/*   IMAGE IS NOW ABSOLUTE: It acts as a background that fills the parent */}
+                                   {/*   IMAGE ABSOLUTE: It acts as a background that fills the parent */}
                                              <img 
                                              src={craftImage} 
                                              alt="craft" 
@@ -280,29 +312,7 @@ const Main = () => {
                                               <Button variant="ghost"><span className="flex items-center gap-4 leading-none">Explore<FaGreaterThan /></span></Button>
                                          </div>
                                    </div>
-                              </div> 
-                                   {/* iroko onyx layout  */}
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">                            
-                                   <div flex-1>
-                                        <img src={irokoOnyx} alt="Iroko Onyx" className="w-full h-auto object-cover" /> 
-                                   </div>
-                                   <div flex-1 className="flex flex-col gap-6 items-start justify-center">
-                                         <p className="text-lg font-bold">Signature</p>
-                                         <p className="text-2xl font-bold md:text-3xl">Iroko Onyx asserts authority</p>
-                                         <p className="text-xs md:text-lg">
-                                           A four-door masterpiece with hand-stitched leather and walnut <br />
-                                           trim throughout.
-                                           Zero to sixty arrives in three point eight seconds <br />
-                                           with a range exceeding five hundred miles.
-                                         </p>
-                                         <div className="flex gap-4">
-                                              <Link to="/contact"><Button variant="outlineGreen">Reserve</Button></Link>
-                                              <Link to="/fleet"><Button variant="ghost"><span className="flex items-center gap-4 leading-none">Explore<FaGreaterThan /></span></Button></Link>
-                                         </div>
-                                   </div>
-                              </div> 
-
-
+                              </div>                              
                           </div>
                     </div>
                </div>

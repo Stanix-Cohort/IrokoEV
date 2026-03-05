@@ -15,7 +15,7 @@ const Main = () => {
   return (
     <div>
                      {/* matches  Navbar's constraints same padding for consistency*/}
-         <div className="max-w-[1440px] mx-auto px-3 h-full">
+         <div className="max-w-360 mx-auto px-3 h-full">
             
                       {/* Hero Section */}
 <div className="relative z-10 flex flex-col w-full">
@@ -29,7 +29,7 @@ const Main = () => {
                     flex flex-col items-center justify-start
                     text-center
                     pt-10 pb-8 px-6 sm:px-8
-                    min-h-[360px] md:min-h-[600px]
+                    min-h-90 md:min-h-150
                ">
 
                     {/* CONTENT */}
@@ -107,7 +107,7 @@ const Main = () => {
                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-8">
                                             {/*added 'flex', 'flex-col', and 'min-h-[350px]' to the main parent wrapper */}
                                             {/* Grid Item Performance  */}
-                          <div className="relative w-full rounded-3xl overflow-hidden flex flex-col justify-between p-6 sm:p-8 min-h-[300px] lg:min-h-[350px]">                                  
+                          <div className="relative w-full rounded-3xl overflow-hidden flex flex-col justify-between p-6 sm:p-8 min-h-75 lg:min-h-87.5">                                  
                                    
                                              {/* IMAGE ABSOLUTE: acts as a background that fills the parent */}
                                              <img 
@@ -118,7 +118,7 @@ const Main = () => {
                                    
                                    {/* TOP CONTENT: Added 'relative z-10' so it sits above the image */}
                                    <div className="relative z-10 text-start" >
-                                             <p className="inline-block text-xs text-white bg-transparent outline outline-2 outline-white rounded-full px-6 py-2">
+                                             <p className="inline-block text-xs text-white bg-transparent outline-2 outline-white rounded-full px-6 py-2">
                                                   Performance
                                              </p> 
                                    </div>
@@ -139,7 +139,7 @@ const Main = () => {
                          </div>
 
                                    {/* 2. Grid Item Craftmanship */}
-                          <div className="relative w-full rounded-3xl overflow-hidden flex flex-col justify-between p-6 sm:p-8 min-h-[300px] lg:min-h-[350px]">                                  
+                          <div className="relative w-full rounded-3xl overflow-hidden flex flex-col justify-between p-6 sm:p-8 min-h-75 lg:min-h-87.5">                                  
                                    
                                    {/*   IMAGE ABSOLUTE: It acts as a background that fills the parent */}
                                              <img 
@@ -150,7 +150,7 @@ const Main = () => {
                                    
                                    {/*  TOP CONTENT: Added 'relative z-10' so it sits above the image */}
                                    <div className="relative z-10 text-start">
-                                             <p className="inline-block text-xs text-white bg-transparent outline outline-2 outline-white rounded-full px-6 py-2">
+                                             <p className="inline-block text-xs text-white bg-transparent outline-2 outline-white rounded-full px-6 py-2">
                                                   Craftmanship
                                              </p> 
                                    </div>
@@ -171,7 +171,7 @@ const Main = () => {
                          </div>
 
                                    {/* 3. Grid Item Technology */}
-                          <div className="relative w-full rounded-3xl overflow-hidden flex flex-col justify-between p-6 sm:p-8 min-h-[300px] lg:min-h-[350px]">                                  
+                          <div className="relative w-full rounded-3xl overflow-hidden flex flex-col justify-between p-6 sm:p-8 min-h-75 lg:min-h-87.5">                                  
                                    
                                    {/*  IMAGE IS ABSOLUTE: It acts as a background that fills the parent */}
                                              <img 
@@ -182,7 +182,7 @@ const Main = () => {
                                    
                                    {/*. TOP CONTENT: Added 'relative z-10' so it sits above the image */}
                                    <div className="relative z-10 text-start">
-                                             <p className="inline-block text-xs text-white bg-transparent outline outline-2 outline-white rounded-full px-6 py-2">
+                                             <p className="inline-block text-xs text-white bg-transparent outline-2 outline-white rounded-full px-6 py-2">
                                                   Technology
                                              </p> 
                                    </div>
@@ -204,7 +204,7 @@ const Main = () => {
                                                                                               
                                    
                                     {/* 4. Grid Item Status */}
-                                <div className="relative w-full rounded-3xl overflow-hidden flex flex-col justify-between p-6 sm:p-8 min-h-[300px] lg:min-h-[350px]">                                  
+                                <div className="relative w-full rounded-3xl overflow-hidden flex flex-col justify-between p-6 sm:p-8 min-h-75 lg:min-h-87.5">                                  
                                    
                                    {/*  IMAGE IS ABSOLUTE: It acts as a background that fills the parent */}
                                              <img 
@@ -215,7 +215,7 @@ const Main = () => {
                                    
                                    {/*  TOP CONTENT: Added 'relative z-10' so it sits above the image */}
                                    <div className="relative z-10 text-start">
-                                            <p className="inline-block text-xs text-white bg-transparent outline outline-2 outline-white rounded-full px-6 py-2">
+                                            <p className="inline-block text-xs text-white bg-transparent outline-2 outline-white rounded-full px-6 py-2">
                                                   Status
                                              </p>    
                                    </div>
@@ -280,7 +280,7 @@ const Main = () => {
                                   
                                   {/* Section Collection Fleet container */}
                <div>
-                    <div className="w-full max-w-[1440px] px-2 mt-16">
+                    <div className="w-full max-w-360 px-2 mt-16">
                           <div>
                                <div className="flex flex-row justify-center items-center gap-4 text-center mb-6 l">
                                  <a href="#fleet" className="hover:underline transition-al">Iroko Air</a>

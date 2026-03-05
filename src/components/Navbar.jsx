@@ -8,9 +8,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <nav className="fixed left-3 right-3 h-[100px] bg-black z-50 rounded-tr-2xl rounded-tl-2xl">
+    <nav className="fixed left-3 right-3 h-25 bg-black z-50 rounded-tr-2xl rounded-tl-2xl">
                     
-      <div className="max-w-[1440px] mx-auto h-full flex items-center justify-between mr-6">
+      <div className="max-w-360 mx-auto h-full flex items-center justify-between mr-6">
 
         <div className="font-bold text-xl">
           <img src={Logo} alt="Logo" className="w-20 h-20 md:w-22 md:h-22"/>
@@ -20,7 +20,7 @@ export default function Navbar() {
               
       <ul
               className={`
-                absolute top-[72px] left-0 w-full shadow-md md:text-gray-400 
+                absolute top-18 left-0 w-full shadow-md md:text-gray-400 
                 flex flex-col items-center gap-6 py-6
                 transition-all duration-300
                 md:static md:flex-row md:shadow-none md:w-auto md:py-0
@@ -50,7 +50,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-            <div className="flex flex-col md:hidden absolute top-[80px] right-4 w-52 bg-black text-lg text-white px-8 py-8 space-y-6 shadow-2xl rounded-sm opacity-95 border border-white">
+            <div className="flex flex-col md:hidden absolute top-20 right-4 w-52 bg-black text-lg text-white px-8 py-8 space-y-6 shadow-2xl rounded-sm opacity-95 border border-white">
               <Link to="/" onClick={() => setOpen(false)}>Home</Link>
               <Link to="/about" onClick={() => setOpen(false)}>About</Link>
               <Link to="/fleet" onClick={() => setOpen(false)}>Fleet</Link>

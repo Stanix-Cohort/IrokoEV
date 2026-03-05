@@ -22,7 +22,7 @@ function App() {
                           <Navbar />
                           
                           {/* The Constraint Wrapper */}
-                          <div className="max-w-[1440px] mx-auto relative">
+                          <div className="max-w-360 mx-auto relative">
                               <Routes>
                                     <Route path="/" element={<Home/>} />      
                                     <Route path="/about" element={<About />} />

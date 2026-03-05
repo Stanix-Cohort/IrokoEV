@@ -40,7 +40,7 @@ const FAQ = () => {
     <div>
     <section
       id="faq"
-      className="min-h-screen pt-[72px] flex items-center justify-center"
+      className="min-h-screen pt-18 flex items-center justify-center"
     >
       <div className="w-full">
         <section className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto px-4 sm:px-6 gap-6">
@@ -102,12 +102,12 @@ const FAQ = () => {
       </div>
             
     </section>
-    <div className="relative z-0 mt-[39px]">
+    <div className="relative z-0 mt-9.75">
       <img
         src={faqImage}
         alt="faq"
         className="w-full object-cover object-center px-3 sm:px-8 
-      min-h-[360px] md:min-h-[500px]"
+      min-h-90 md:min-h-125"
       />
     </div>
 </div>

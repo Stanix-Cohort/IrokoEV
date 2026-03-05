@@ -11,16 +11,16 @@ const Home = () => {
   return (
     <section
       id="footer"
-      className="min-h-screen pt-[50px] flex items-center justify-center"
+      className="min-h-screen pt-12.5 flex items-center justify-center"
     >
-      <div className="max-w-[1440px] w-full min-h-screen mx-auto flex flex-col justify-center items-center gap-8  bg-black text-white px-2 sm:px-2">
-        <div className="relative z-10 flex flex-col items-start md:flex-row border-b-1 pb-6 border-gray-600 justify-evenly items-center gap-12 px-1 sm:px-2">
+      <div className="max-w-360 w-full min-h-screen mx-auto flex flex-col justify-center items-center gap-8  bg-black text-white px-2 sm:px-2">
+        <div className="relative z-10 flex flex-col items-start md:flex-row border-b pb-6 border-gray-600 justify-evenly gap-12 px-1 sm:px-2">
           <div className="flex flex-col md:flex-row items-start gap-6">
             <div className="flex md:flex-col items-center gap-4">
               <img
                 src={Logo}
                 alt="Iroko Logo"
-                className="w-[100px] h-[100px] object-contain"
+                className="w-25 h-25 object-contain"
               /> 
              </div>
             <div className="flex flex-col gap-4">              
@@ -77,7 +77,7 @@ const Home = () => {
             
           </div>
         </div>
-        <div className="relative z-0 mt-[39px] hidden md:block border-">
+        <div className="relative z-0 mt-9.75 hidden md:block border-">
              <h1 className="md:text-lg text-center">
           © 2026 Iroko Motors Inc. All rights reserved  
         </h1>

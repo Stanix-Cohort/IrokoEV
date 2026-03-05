@@ -6,6 +6,10 @@ import Fleet from './pages/Fleet'
 import Contact from './pages/Contact'
 import Footer from "./components/Footer"
 import FAQ from "./pages/FAQ"
+import Policy from "./pages/Policy"
+import Terms from "./pages/Terms"
+import Cookie from "./pages/Cookie"
+import Thanks from './pages/Thanks'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
@@ -25,6 +29,10 @@ function App() {
                                     <Route path="/fleet" element={<Fleet />} />
                                     <Route path="/contact" element={<Contact />} />
                                     <Route path="/faq" element={<FAQ />}/>
+                                    <Route path="/policy" element={<Policy />}/>
+                                    <Route path="/terms" element={<Terms />}/>
+                                    <Route path="/cookie" element={<Cookie />}/>
+                                    <Route path="/thanks" element={<Thanks />}/>
                               </Routes>      
                                                                                  
                           </div>

@@ -8,6 +8,7 @@ import craftImage from '../assets/CraftImage.png'
 import techImage from '../assets/TechImage.png'
 import statusImage from '../assets/StatusImage.jpg'
 import { Link } from "react-router-dom";
+import glow from '../assets/Glow.png'
 
 
 const Main = () => {
@@ -17,8 +18,15 @@ const Main = () => {
          <div className="max-w-360 mx-auto px-3 h-full">
             
                       {/* Hero Section */}
-<div className="relative z-10 flex flex-col w-full">
-
+                      {/* Glow Light top right corner: absolute position with z-index to sit above the image, and some padding to keep it away from the edges. */}
+              <div className="relative z-10 flex flex-col w-full">
+                  <div className="absolute top-4 right-4 z-50">
+                    <img src={glow}  alt="Hero"  // w-20 (80px) is good "Logo" size. w-24 (96px) is slightly bigger.
+                            className="w-180 h-auto object-contain"  />      
+                     </div>         
+                             
+                        
+             
                {/* Grid with overlay */}
                <div className="grid grid-cols-1">
 

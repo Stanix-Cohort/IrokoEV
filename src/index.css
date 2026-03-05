@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+
+/* I Define Custom Iroko Colors here */
+@theme {
+  --color-iroko: #066339;
+  --color-iroko-hover: #0BAF65;
+  --color-iroko-pressed: #043E23;
+  --color-iroko-yellow: #CFCA11
+
+/* I Define the custom font family */
+ --font-jakarta: "Plus Jakarta Sans", sans-serif;
+}
+
+
+ /* for smooth scrolling behavior when navigating to anchors within the page */ 
+html {
+  scroll-behavior: smooth;
+}

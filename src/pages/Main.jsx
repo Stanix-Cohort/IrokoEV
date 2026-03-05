@@ -3,7 +3,6 @@ import heroImage from '../assets/HeroCar.png'
 import Button from '../components/Button'
 import { FaGreaterThan } from "react-icons/fa";
 import irokoAir from '../assets/IrokoAir.png'
-import irokoOnyx from '../assets/IrokoOnyx.png'
 import performanceImage from '../assets/PerformanceImage.png'
 import craftImage from '../assets/CraftImage.png'
 import techImage from '../assets/TechImage.png'

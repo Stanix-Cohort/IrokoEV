@@ -51,25 +51,25 @@ const Home = () => {
                 </button></Link>
               {/* <button>Submit</button> */}
             </div>
-            <div className="flex items-center gap-4 mt-4">
+            <div className="flex items-center gap-4 mt-4 ">
               <Link to="https://www.facebook.com/login" target="_blank">
                 <span>
-                  <img src={facebook} alt="Facebook" className="w-6 h-6" />
+                  <img src={facebook} alt="Facebook" className="w-6 h-6 hover:scale-120"  />
                 </span>
               </Link>
               <Link to="https://twitter.com/login" target="_blank">
                 <span>
-                  <img src={twitter} alt="Twitter" className="w-6 h-6" />
+                  <img src={twitter} alt="Twitter" className="w-6 h-6 hover:scale-120" />
                 </span>
               </Link>
               <Link to="https://www.instagram.com/login" target="_blank">
                 <span>
-                  <img src={instagram} alt="Instagram" className="w-6 h-6" />
+                  <img src={instagram} alt="Instagram" className="w-6 h-6 hover:scale-120" />
                 </span>
               </Link>
               <Link to="https://www.linkedin.com/login" target="_blank">
                 <span>
-                  <img src={linkedin} alt="Linkedin" className="w-6 h-6" />
+                  <img src={linkedin} alt="Linkedin" className="w-6 h-6 hover:scale-120" />
                 </span>
               </Link>
             </div>
@@ -79,7 +79,7 @@ const Home = () => {
         </div>
         <div className="relative z-0 mt-9.75 hidden md:block border-">
              <h1 className="md:text-lg text-center">
-          © 2026 Iroko Motors Inc. All rights reserved  
+          © 2026 IrokoEV Inc. All rights reserved  
         </h1>
         </div>
         

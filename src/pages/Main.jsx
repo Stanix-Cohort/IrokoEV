@@ -1,14 +1,14 @@
 import React from 'react'
 import heroImage from '../assets/HeroCar.png'
-import Button from '../components/Button'
 import { FaGreaterThan } from "react-icons/fa";
-import irokoAir from '../assets/IrokoAir.png'
 import performanceImage from '../assets/PerformanceImage.png'
 import craftImage from '../assets/CraftImage.png'
 import techImage from '../assets/TechImage.png'
 import statusImage from '../assets/StatusImage.jpg'
 import { Link } from "react-router-dom";
 import glow from '../assets/Glow.png'
+import irokoAir from '../assets/IrokAir.png'
+import Button from '../components/Button'
 
 
 const Main = () => {
@@ -20,7 +20,7 @@ const Main = () => {
                       {/* Hero Section */}
                       {/* Glow Light top right corner: absolute position with z-index to sit above the image, and some padding to keep it away from the edges. */}
               <div className="relative z-10 flex flex-col w-full">
-                  <div className="absolute top-4 right-4 z-50">
+                  <div className="hidden md:block absolute top-4 right-4 z-50">
                     <img src={glow}  alt="Hero"  // w-20 (80px) is good "Logo" size. w-24 (96px) is slightly bigger.
                             className="w-180 h-auto object-contain"  />      
                      </div>         
@@ -36,7 +36,7 @@ const Main = () => {
                     flex flex-col items-center justify-start
                     text-center
                     pt-10 pb-8 px-6 sm:px-8
-                    min-h-90 md:min-h-150
+                    min-h-90 md:min-h-160
                ">
 
                     {/* CONTENT */}
@@ -53,18 +53,12 @@ const Main = () => {
                          engineering and the lightness of innovation.
                          
                     </p>
-
-                    {/* BUTTON */}
-                    <Link to="/fleet" className="hidden md:block">
-                         <Button shape="pill" variant="latest">
-                         Explore The Fleet
-                         </Button>
-                    </Link>
-                         <Link to="/contact" className="block md:hidden">
-                         <Button shape="pill" variant="latest">
-                         Explore The Fleet
-                         </Button>
-                    </Link>
+                    <div className="relative z-">
+                          <Link to="/fleet"><Button shape="pill" variant="latest">Explore the Fleet</Button></Link>
+                    </div>
+                   
+                   
+                   
                     </div>
 
                     {/* IMAGE DESKTOP*/}
